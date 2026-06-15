@@ -278,7 +278,7 @@ async function processOne(item) {
     item.webpSize  = blob100.size;
     item.webpUrl   = URL.createObjectURL(blob100);
     item.quality   = 100;
-    const TARGET = 150 * 1024;
+    const TARGET = 100 * 1024;
     item.minQuality = (item.webpSize <= TARGET) ? 100 : await bsearchMin(canvas, TARGET);
     freeCanvas(canvas);
     item.status = 'done';
